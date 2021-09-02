@@ -1,8 +1,9 @@
 export const isLoggedIn = () =>{
-    let value = localStorage.getItem('DLGT_PROJECT2_postGivingAppRemastered');
-    const obj = JSON.parse(value);
-    console.log(obj.loggedIn);
-    return obj.loggedIn;
+    //let value = localStorage.getItem('DLGT_PROJECT2_postGivingAppRemastered');
+    //const obj = JSON.parse(value);
+    //console.log(obj.loggedIn);
+    //return obj.loggedIn;
+    return false;
 }
 
 export const getloggedInUsersInfo = () =>{
