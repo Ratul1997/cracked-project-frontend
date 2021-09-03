@@ -7,6 +7,7 @@ import { ADDRESS } from '../../BackendAddress';
 import { URL } from '../../urls/url';
 import { ObjectToBeSavedInBrowser } from '../../model/ObjectToBeSavedInBrowser';
 import { getLoggedIn } from '../../Utility';
+import { headers } from '../../headers';
 
 export default function LogIn() {
 
@@ -50,7 +51,9 @@ export default function LogIn() {
     const loginSubmitHandler = (e) =>{
         e.preventDefault();
         if(tempUserDetails.tempUserEmail && tempUserDetails.tempUserHandleName && tempUserDetails.tempUserPassword){
-            axios.post(URL.LOGIN_URL, {tempUserDetails})
+            axios.post(URL.LOGIN_URL, {tempUserDetails} , {
+                headers : headers
+            })
             .then((res) =>{
                 saveToBrowserStorage(res.data[0]);
                 if(res.data.length){
