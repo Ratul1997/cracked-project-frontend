@@ -50,7 +50,11 @@ export default function LogIn() {
     const loginSubmitHandler = (e) =>{
         e.preventDefault();
         if(tempUserDetails.tempUserEmail && tempUserDetails.tempUserHandleName && tempUserDetails.tempUserPassword){
+<<<<<<< HEAD
             axios.post(URL.LOGIN_URL, {tempUserDetails})
+=======
+            axios.post(`https://fast-meadow-49435.herokuapp.com/logIn/login`,{tempUserDetails})
+>>>>>>> eb90b4620456da056b1017e73d7c1c23848de1bf
             .then((res) =>{
                 saveToBrowserStorage(res.data[0]);
                 if(res.data.length){
